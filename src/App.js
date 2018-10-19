@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import 'antd/dist/antd.css';     
 import SignUp from './components/signUp';
 import Login from './components/login'
 import HomePage from './components/home';

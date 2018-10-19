@@ -1,0 +1,51 @@
+
+#addChild{
+    bottom: 12px;
+    position: fixed;
+    right: 18px;
+}
+#adddiscript{
+    font-size: 44px;
+    background: purple;
+    padding: 8px 28px;
+    border-radius: 50%;
+    color: white;   
+}
+#addchildDetails{
+    background: #dedada;
+    width: 40%;
+    height: 300px;
+    margin: auto;
+    margin-top: 10px;
+}
+.missingChildLabel{
+    color:#670f6b;
+    font-size: 23px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: -webkit-pictograph;
+    padding-top: 20px;
+}
+
+#addchildDetails .child-name{
+    border: 1px solid #cec0c0;
+    padding: 5px 35px;
+    border-radius: 5px;
+}
+
+#addchildDetails .child-des{
+    border: 1px solid #cec0c0;
+    padding: 5px 35px;
+    border-radius: 5px;
+}
+
+.submitDetails{
+    background-color: purple;
+    color: white;
+    border: 1px solid purple;
+    padding:8px 14px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+

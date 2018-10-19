@@ -85,9 +85,7 @@ class SignUp extends Component {
             />
         }
         else{
-            return <Redirect to={{
-                pathname:'/signup'
-            }}/>
+            console.log("you have to fill all the filds")
         }
     }
   render() {
@@ -153,7 +151,7 @@ class SignUp extends Component {
                         </div>
 
                         <div className="container-login100-form-btn">
-                            <button type="submit" className="login100-form-btn"  onClick={this.postData}  onClick={this.validateSignupInp}>
+                            <button type="submit" className="login100-form-btn" onClick={this.validateSignupInp}>
                                 SignUp
                             </button>
                         </div>

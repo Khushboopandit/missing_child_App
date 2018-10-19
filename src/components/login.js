@@ -59,6 +59,9 @@ class Login extends Component {
             }}
             />
         }
+        else{
+            console.log("you have to fill all the filds")
+        }
     }
   render() {
     return (
@@ -84,7 +87,7 @@ class Login extends Component {
                         </div>
 
                         <div className="container-login100-form-btn">
-                            <button type="submit" className="login100-form-btn"  onClick={this.postData}  onClick={this.validateLoginInp}>
+                            <button type="submit" className="login100-form-btn"  onClick={this.validateLoginInp}>
                                 Login
                             </button>
                         </div>
