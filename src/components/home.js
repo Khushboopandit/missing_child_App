@@ -14,13 +14,17 @@ class HomePage extends Component{
             visibility:"visible"
         })
     }
+
+    afterDesSubmit=()=>{
+        this.setState({visibility:"hidden"})
+    }
     render(){
         return(
             <div>
                 
                 <h1>Welcome</h1>
                 <h3>{this.props.location.state.firstname} {this.props.location.state.lastname}</h3>
-                <AddChilsDetails visible = {this.state.visibility} />
+                <AddChilsDetails visible = {this.state.visibility} afterDesSubmit={this.afterDesSubmit}/>
                 <AddButton addChildDisplay={this.addChildDisplay}/>
             </div>
         )

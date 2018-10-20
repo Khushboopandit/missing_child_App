@@ -8,6 +8,7 @@ class AddChilsDetails extends Component{
             this.state={
                 missingChildName: '',
                 Description:'',
+                file: [],
             }
     }
 
@@ -19,11 +20,13 @@ class AddChilsDetails extends Component{
 
     postData=(e)=>{
         const missingChildName = this.state.missingChildName	
-        const Description = this.state.Description	
+        const Description = this.state.Description
+        const file = this.state.file
 
         const data = {
             missingChildName,
-            Description
+            Description,
+            file
         }
         console.log(data);
         
@@ -42,6 +45,9 @@ class AddChilsDetails extends Component{
     render(){
         return(
             <div id="addchildDetails" style={{visibility:this.props.visible}}>
+                <div className="imagePost">
+                    <input type="file" value={this.state.file} name="file" className="postImageBtn"/>
+                </div>
                 <label className="missingChildLabel">
                     missingChildName
                 </label>
@@ -51,7 +57,7 @@ class AddChilsDetails extends Component{
                 </label>
                 <textarea type="text" placeholder="enter description" name="Description" className="child-des" value={this.state.Description} onChange={this.inputHandler} />
                 <div>
-                <button className="submitDetails" onClick={this.postData} >Submit</button>
+                <button className="submitDetails" onClick={this.postData} onClick={this.props.afterDesSubmit}>Submit</button>
                 </div>
             </div>
         )
