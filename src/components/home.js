@@ -14,12 +14,13 @@ class HomePage extends Component{
             file: null,
             missingChildName: '',
             Description:'',
+            displaycard:"block",
         }
     }
 
      addChildDisplay=()=>{
         this.setState({
-            visibility:"block"
+            visibility:"block", displaycard:"none"
         })
     }
     
@@ -35,8 +36,10 @@ class HomePage extends Component{
       
     postData=()=>{
         this.setState({
-            visibility:"none"
+            visibility:"none",
+            displaycard:"block"
         })
+  
         const formData = new FormData();
         formData.append('file', this.state.file);
         formData.append('missingChildName', this.state.missingChildName);
@@ -54,23 +57,23 @@ class HomePage extends Component{
     render(){
         return(
             <div>
-               <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                    <a class="navbar-brand" href="">MissingChild</a>
+               <nav className ="navbar navbar-inverse">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                    <a className="navbar-brand" href="">MissingChild</a>
                     </div>
-                    <ul class="nav navbar-nav">
-                    <li class="active"><a href="">Home</a></li> 
+                    <ul className="nav navbar-nav">
+                    <li className="active"><a href="">Home</a></li> 
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><Link to="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</Link></li>
-                    <li class="active"><Link to="/login"><span class="glyphicon glyphicon-log-in"></span> Login</Link></li>
+                    <ul className="nav navbar-nav navbar-right">
+                    <li className="active"><Link to="/signup"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
+                    <li className="active"><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
                     </ul>
                 </div>
                 </nav>         
                 <h1 className="missingChildHeading">Missing Child</h1>
-                <CardsForMissingChild />
                 <AddChilsDetails {...this.state} {...this.props} postData={this.postData} fileChangedHandler={this.fileChangedHandler}/>
+                <CardsForMissingChild displaycard={this.state.displaycard}/>
                 <AddButton addChildDisplay={this.addChildDisplay}/>
             </div>
         )
