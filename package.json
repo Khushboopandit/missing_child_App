@@ -2,10 +2,12 @@
   "name": "signup_v3",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://khushboopandit.github.io/missing_child_App/",
   "dependencies": {
     "@material-ui/core": "^3.2.0",
     "antd": "^3.10.1",
     "axios": "^0.18.0",
+    "deploy": "^1.0.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-popup": "^0.9.3",
@@ -18,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,5 +32,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
