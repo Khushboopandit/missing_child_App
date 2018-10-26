@@ -56,22 +56,28 @@ class HomePage extends Component{
 
     render(){
         return(
-            <div>
-               <nav className ="navbar navbar-inverse">
-                <div className="container-fluid">
+            <div className="homepage">
+               <nav class="navbar navbar-inverse">
                     <div className="navbar-header">
-                    <a className="navbar-brand" href="">MissingChild</a>
+                        <button className="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                            <span className="sr-only"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                        </button>
+                        <a className="navbar-brand" href="#">Missing Child</a>
                     </div>
-                    <ul className="nav navbar-nav">
-                    <li className="active"><a href="">Home</a></li> 
-                    </ul>
-                    <ul className="nav navbar-nav navbar-right">
-                    <li className="active"><Link to="/signup"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
-                    <li className="active"><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
-                    </ul>
-                </div>
+                    <div className="collapse navbar-collapse js-navbar-collapse" id="navbar-collapse-1">
+                        <ul className="nav navbar-nav">
+                            <li className="dropdown-toggle"><a href="">Home</a></li> 
+                        </ul>
+                        <ul className="nav navbar-nav navbar-right">
+                            <li><Link to="/signup"><span className="glyphicon dropdown-toggle glyphicon-user"></span> Sign Up</Link></li>
+                            <li><Link to="/login"><span className="glyphicon dropdown-toggle glyphicon-log-in"></span> Login</Link></li>
+                        </ul>
+                    </div>
                 </nav>         
-                <h1 className="missingChildHeading">Missing Child</h1>
+                <h1 className="text-center rainbow">Missing Child</h1>
                 <AddChilsDetails {...this.state} {...this.props} postData={this.postData} fileChangedHandler={this.fileChangedHandler}/>
                 <CardsForMissingChild displaycard={this.state.displaycard}/>
                 <AddButton addChildDisplay={this.addChildDisplay}/>
