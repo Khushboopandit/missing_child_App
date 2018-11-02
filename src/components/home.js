@@ -76,8 +76,10 @@ class HomePage extends Component{
                             <li><Link to="/login"><span className="glyphicon dropdown-toggle glyphicon-log-in"></span> Login</Link></li>
                         </ul>
                     </div>
-                </nav>         
-                <h1 className="text-center rainbow">Missing Child</h1>
+                </nav>
+                <div className="headingImg">         
+                    <h1 className="text-center rainbow font-style"><img src="https://image.flaticon.com/icons/png/512/42/42978.png" className="w-12"/>Missing Child</h1>
+                </div>
                 <AddChilsDetails {...this.state} {...this.props} postData={this.postData} fileChangedHandler={this.fileChangedHandler}/>
                 <CardsForMissingChild displaycard={this.state.displaycard}/>
                 <AddButton addChildDisplay={this.addChildDisplay}/>

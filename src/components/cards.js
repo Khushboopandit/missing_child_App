@@ -76,6 +76,8 @@ class FullcardWithDetail extends Component {
         let comments = this.state.comments;
         comments.push(this.state.comInput)
         console.log(comments)
+        this.setState({comInput:''})
+        this.forceUpdate()
     }
    
 
@@ -93,17 +95,21 @@ class FullcardWithDetail extends Component {
                                 <img src={this.props.child.childImage} />
                             </div>
                             <h2>{this.props.child.childName}</h2>
-                            <p>{this.props.child.childDescrip}</p>
+                            <p>{this.props.child.childDescrip}</p>       
                         </div>
                         <div className="position-fixed">
                         <ul>
                             {this.state.comments.map((comment, i)=>
-                                    <li key={i}><b>{comment}</b><br></br><li className="text-sm-left" onClick={this.nestedReply}>reply</li><br></br><NestedReply displayNestedReply={this.state.displayNestedReply}/></li>
+                                    <li key={i}><b>{comment}</b><br></br><li className="text-sm-left" onClick={this.nestedReply}>reply<br></br><NestedReply displayNestedReply={this.state.displayNestedReply}/></li></li>
                                     )
                                 }
                             </ul>
-                            <input className="form-control" type="text" placeholder="Write a comment" value={this.state.comInput}  onChange={this.commentField} />
-                            <button onClick={this.addComment}>send</button>
+                            <div class="input-group input-margin">
+                                <input class="form-control" type="text" placeholder="Write a comment" value={this.state.comInput}  onChange={this.commentField}/>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default " onClick={this.addComment}>Send</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -11,12 +11,22 @@ class NestedReply extends Component {
         this.setState({ comInput: e.target.value })
     }
 
-    addComment=(e)=>{
+    CommentByEnter=(e)=>{
         if (e.charCode == 13) {
         let comments = this.state.comments;
         comments.push(this.state.comInput)
         console.log(comments)
+        this.setState({comInput:''})
+        this.forceUpdate();
        }
+    }
+
+    commentByBtn=()=>{
+      let comments = this.state.comments;
+        comments.push(this.state.comInput)
+        console.log(comments)
+        this.setState({comInput:''})
+        this.forceUpdate()
     }
    
   render() {
@@ -26,13 +36,16 @@ class NestedReply extends Component {
             {this.state.comments.map((comment, i)=>
                     <li Key={i}>{comment}<br></br></li>
                     )
-                }
+            }
             </ul>
-            <input className="form-control" type="text" placeholder="Write a comment" value={this.state.comInput} onChange={this.commentField} onKeyPress={this.addComment}/>
-            {/* <button onClick={this.addComment}>send</button> */}
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Write a comment" value={this.state.comInput} onChange={this.commentField} onKeyPress={this.CommentByEnter}/>
+              <div class="input-group-btn">
+                  <button type="button" class="btn btn-default "  onClick={this.commentByBtn}>Send</button>
+              </div>
+          </div>
       </div>
     );
   }
 }
-
 export default NestedReply;
