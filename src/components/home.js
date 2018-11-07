@@ -57,7 +57,7 @@ class HomePage extends Component{
     render(){
         return(
             <div className="homepage">
-               <nav class="navbar navbar-inverse">
+               <nav className="navbar navbar-inverse">
                     <div className="navbar-header">
                         <button className="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
                             <span className="sr-only"></span>

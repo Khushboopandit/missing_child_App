@@ -16,7 +16,6 @@ class NestedReply extends Component {
         let comments = this.state.comments;
         comments.push(this.state.comInput)
         console.log(comments)
-        this.setState({comInput:''})
         this.forceUpdate();
        }
     }
@@ -25,13 +24,12 @@ class NestedReply extends Component {
       let comments = this.state.comments;
         comments.push(this.state.comInput)
         console.log(comments)
-        this.setState({comInput:''})
         this.forceUpdate()
     }
    
   render() {
     return (
-      <div className="nestedReply" style={{ display: this.props.displayNestedReply}}>
+      <div className="nestedReply" style={{ display: this.props.displayNestedReply?'block':'none'}}>
         <ul>
             {this.state.comments.map((comment, i)=>
                     <li Key={i}>{comment}<br></br></li>
