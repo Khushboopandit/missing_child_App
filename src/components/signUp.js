@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/main.css';
 import '../css/util.css';
 import axios from 'axios';
-import bgImage from '/home/khushboo/Documents/signup_v3/src/images/bg-01.jpg';
+import bgImage from '../images/bg-01.jpg';
 import { Redirect } from 'react-router';
 
 
